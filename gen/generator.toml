@@ -1,0 +1,25 @@
+[general]
+library_name = "libflecs"
+output_file_path = "./LibFlecs.jl"
+module_name = "LibFlecs"
+jll_pkg_name = "flecs_jll"
+export_symbol_prefixes = ["ecs_", "FLECS_API"]
+
+printer_blacklist = [
+    "FLECS_VERSION",
+    "ECS_CLANG_VERSION",
+    "FLECS_DBG_API",
+    "ecs_termset_t",
+    "ecs_pair_relation",
+    "ecs_pair_target",
+    "ECS_MAX_COMPONENT_ID",
+    "EcsSingleton",
+    "EcsLastInternalComponentId",
+    "ECS_ENTITY_DECLARE",
+    "ECS_TAG_DECLARE",
+    "ECS_PREFAB_DECLARE",
+    "ecs_dbg",
+    "ECS_STRUCT_ECS_META_IMPL",
+    "ECS_ENUM_ECS_META_IMPL",
+    "ECS_BITMASK_ECS_META_IMPL",
+]
