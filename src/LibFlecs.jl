@@ -173,11 +173,11 @@ struct ecs_query_t
     eval_count::Int32
 end
 
-struct var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"
+struct var"##Ctag#318"
     data::NTuple{96, UInt8}
 end
 
-function Base.getproperty(x::Ptr{var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"}, f::Symbol)
+function Base.getproperty(x::Ptr{var"##Ctag#318"}, f::Symbol)
     f === :query && return Ptr{ecs_query_iter_t}(x + 0)
     f === :page && return Ptr{ecs_page_iter_t}(x + 0)
     f === :worker && return Ptr{ecs_worker_iter_t}(x + 0)
@@ -185,14 +185,14 @@ function Base.getproperty(x::Ptr{var"union (unnamed at /home/kyjor/.julia/artifa
     return getfield(x, f)
 end
 
-function Base.getproperty(x::var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)", f::Symbol)
-    r = Ref{var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"}(x)
-    ptr = Base.unsafe_convert(Ptr{var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"}, r)
+function Base.getproperty(x::var"##Ctag#318", f::Symbol)
+    r = Ref{var"##Ctag#318"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#318"}, r)
     fptr = getproperty(ptr, f)
     GC.@preserve r unsafe_load(fptr)
 end
 
-function Base.setproperty!(x::Ptr{var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"}, f::Symbol, v)
+function Base.setproperty!(x::Ptr{var"##Ctag#318"}, f::Symbol, v)
     unsafe_store!(getproperty(x, f), v)
 end
 
@@ -236,7 +236,7 @@ struct ecs_iter_private_t
 end
 
 function Base.getproperty(x::Ptr{ecs_iter_private_t}, f::Symbol)
-    f === :iter && return Ptr{var"union (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/api_types.h:150:5)"}(x + 0)
+    f === :iter && return Ptr{var"##Ctag#318"}(x + 0)
     f === :entity_iter && return Ptr{Ptr{Cvoid}}(x + 96)
     f === :cache && return Ptr{ecs_iter_cache_t}(x + 104)
     return getfield(x, f)
@@ -1821,7 +1821,7 @@ struct ecs_build_info_t
     perf_trace::Bool
 end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs.h:1403:5)"
+struct var"##Ctag#317"
     add_count::Int64
     remove_count::Int64
     delete_count::Int64
@@ -1835,6 +1835,33 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     batched_entity_count::Int64
     batched_command_count::Int64
 end
+function Base.getproperty(x::Ptr{var"##Ctag#317"}, f::Symbol)
+    f === :add_count && return Ptr{Int64}(x + 0)
+    f === :remove_count && return Ptr{Int64}(x + 8)
+    f === :delete_count && return Ptr{Int64}(x + 16)
+    f === :clear_count && return Ptr{Int64}(x + 24)
+    f === :set_count && return Ptr{Int64}(x + 32)
+    f === :ensure_count && return Ptr{Int64}(x + 40)
+    f === :modified_count && return Ptr{Int64}(x + 48)
+    f === :discard_count && return Ptr{Int64}(x + 56)
+    f === :event_count && return Ptr{Int64}(x + 64)
+    f === :other_count && return Ptr{Int64}(x + 72)
+    f === :batched_entity_count && return Ptr{Int64}(x + 80)
+    f === :batched_command_count && return Ptr{Int64}(x + 88)
+    return getfield(x, f)
+end
+
+function Base.getproperty(x::var"##Ctag#317", f::Symbol)
+    r = Ref{var"##Ctag#317"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#317"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#317"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
 
 struct ecs_world_info_t
     data::NTuple{296, UInt8}
@@ -1871,7 +1898,7 @@ function Base.getproperty(x::Ptr{ecs_world_info_t}, f::Symbol)
     f === :pair_id_count && return Ptr{Int32}(x + 176)
     f === :table_count && return Ptr{Int32}(x + 180)
     f === :empty_table_count && return Ptr{Int32}(x + 184)
-    f === :cmd && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs.h:1403:5)"}(x + 192)
+    f === :cmd && return Ptr{var"##Ctag#317"}(x + 192)
     f === :name_prefix && return Ptr{Ptr{Cchar}}(x + 288)
     return getfield(x, f)
 end
@@ -3067,12 +3094,29 @@ function Base.setproperty!(x::Ptr{ecs_metric_t}, f::Symbol, v)
     unsafe_store!(getproperty(x, f), v)
 end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:65:5)"
+struct var"##Ctag#319"
     count::ecs_metric_t
     not_alive_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#319"}, f::Symbol)
+    f === :count && return Ptr{ecs_metric_t}(x + 0)
+    f === :not_alive_count && return Ptr{ecs_metric_t}(x + 1200)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:71:5)"
+function Base.getproperty(x::var"##Ctag#319", f::Symbol)
+    r = Ref{var"##Ctag#319"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#319"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#319"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#320"
     tag_count::ecs_metric_t
     component_count::ecs_metric_t
     pair_count::ecs_metric_t
@@ -3080,21 +3124,79 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     create_count::ecs_metric_t
     delete_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#320"}, f::Symbol)
+    f === :tag_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :component_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :pair_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :type_count && return Ptr{ecs_metric_t}(x + 3600)
+    f === :create_count && return Ptr{ecs_metric_t}(x + 4800)
+    f === :delete_count && return Ptr{ecs_metric_t}(x + 6000)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:81:5)"
+function Base.getproperty(x::var"##Ctag#320", f::Symbol)
+    r = Ref{var"##Ctag#320"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#320"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#320"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#321"
     count::ecs_metric_t
     empty_count::ecs_metric_t
     create_count::ecs_metric_t
     delete_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#321"}, f::Symbol)
+    f === :count && return Ptr{ecs_metric_t}(x + 0)
+    f === :empty_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :create_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :delete_count && return Ptr{ecs_metric_t}(x + 3600)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:89:5)"
+function Base.getproperty(x::var"##Ctag#321", f::Symbol)
+    r = Ref{var"##Ctag#321"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#321"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#321"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#322"
     query_count::ecs_metric_t
     observer_count::ecs_metric_t
     system_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#322"}, f::Symbol)
+    f === :query_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :observer_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :system_count && return Ptr{ecs_metric_t}(x + 2400)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:96:5)"
+function Base.getproperty(x::var"##Ctag#322", f::Symbol)
+    r = Ref{var"##Ctag#322"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#322"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#322"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#323"
     add_count::ecs_metric_t
     remove_count::ecs_metric_t
     delete_count::ecs_metric_t
@@ -3107,8 +3209,34 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     batched_entity_count::ecs_metric_t
     batched_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#323"}, f::Symbol)
+    f === :add_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :remove_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :delete_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :clear_count && return Ptr{ecs_metric_t}(x + 3600)
+    f === :set_count && return Ptr{ecs_metric_t}(x + 4800)
+    f === :ensure_count && return Ptr{ecs_metric_t}(x + 6000)
+    f === :modified_count && return Ptr{ecs_metric_t}(x + 7200)
+    f === :other_count && return Ptr{ecs_metric_t}(x + 8400)
+    f === :discard_count && return Ptr{ecs_metric_t}(x + 9600)
+    f === :batched_entity_count && return Ptr{ecs_metric_t}(x + 10800)
+    f === :batched_count && return Ptr{ecs_metric_t}(x + 12000)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:111:5)"
+function Base.getproperty(x::var"##Ctag#323", f::Symbol)
+    r = Ref{var"##Ctag#323"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#323"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#323"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#324"
     frame_count::ecs_metric_t
     merge_count::ecs_metric_t
     rematch_count::ecs_metric_t
@@ -3117,8 +3245,30 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     observers_ran::ecs_metric_t
     event_emit_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#324"}, f::Symbol)
+    f === :frame_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :merge_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :rematch_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :pipeline_build_count && return Ptr{ecs_metric_t}(x + 3600)
+    f === :systems_ran && return Ptr{ecs_metric_t}(x + 4800)
+    f === :observers_ran && return Ptr{ecs_metric_t}(x + 6000)
+    f === :event_emit_count && return Ptr{ecs_metric_t}(x + 7200)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:122:5)"
+function Base.getproperty(x::var"##Ctag#324", f::Symbol)
+    r = Ref{var"##Ctag#324"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#324"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#324"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#325"
     world_time_raw::ecs_metric_t
     world_time::ecs_metric_t
     frame_time::ecs_metric_t
@@ -3129,8 +3279,32 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     fps::ecs_metric_t
     delta_time::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#325"}, f::Symbol)
+    f === :world_time_raw && return Ptr{ecs_metric_t}(x + 0)
+    f === :world_time && return Ptr{ecs_metric_t}(x + 1200)
+    f === :frame_time && return Ptr{ecs_metric_t}(x + 2400)
+    f === :system_time && return Ptr{ecs_metric_t}(x + 3600)
+    f === :emit_time && return Ptr{ecs_metric_t}(x + 4800)
+    f === :merge_time && return Ptr{ecs_metric_t}(x + 6000)
+    f === :rematch_time && return Ptr{ecs_metric_t}(x + 7200)
+    f === :fps && return Ptr{ecs_metric_t}(x + 8400)
+    f === :delta_time && return Ptr{ecs_metric_t}(x + 9600)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:134:5)"
+function Base.getproperty(x::var"##Ctag#325", f::Symbol)
+    r = Ref{var"##Ctag#325"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#325"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#325"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#326"
     alloc_count::ecs_metric_t
     realloc_count::ecs_metric_t
     free_count::ecs_metric_t
@@ -3142,8 +3316,33 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     stack_free_count::ecs_metric_t
     stack_outstanding_alloc_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#326"}, f::Symbol)
+    f === :alloc_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :realloc_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :free_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :outstanding_alloc_count && return Ptr{ecs_metric_t}(x + 3600)
+    f === :block_alloc_count && return Ptr{ecs_metric_t}(x + 4800)
+    f === :block_free_count && return Ptr{ecs_metric_t}(x + 6000)
+    f === :block_outstanding_alloc_count && return Ptr{ecs_metric_t}(x + 7200)
+    f === :stack_alloc_count && return Ptr{ecs_metric_t}(x + 8400)
+    f === :stack_free_count && return Ptr{ecs_metric_t}(x + 9600)
+    f === :stack_outstanding_alloc_count && return Ptr{ecs_metric_t}(x + 10800)
+    return getfield(x, f)
+end
 
-struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:151:5)"
+function Base.getproperty(x::var"##Ctag#326", f::Symbol)
+    r = Ref{var"##Ctag#326"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#326"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#326"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
+
+struct var"##Ctag#327"
     request_received_count::ecs_metric_t
     request_invalid_count::ecs_metric_t
     request_handled_ok_count::ecs_metric_t
@@ -3154,6 +3353,30 @@ struct var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c
     send_error_count::ecs_metric_t
     busy_count::ecs_metric_t
 end
+function Base.getproperty(x::Ptr{var"##Ctag#327"}, f::Symbol)
+    f === :request_received_count && return Ptr{ecs_metric_t}(x + 0)
+    f === :request_invalid_count && return Ptr{ecs_metric_t}(x + 1200)
+    f === :request_handled_ok_count && return Ptr{ecs_metric_t}(x + 2400)
+    f === :request_handled_error_count && return Ptr{ecs_metric_t}(x + 3600)
+    f === :request_not_handled_count && return Ptr{ecs_metric_t}(x + 4800)
+    f === :request_preflight_count && return Ptr{ecs_metric_t}(x + 6000)
+    f === :send_ok_count && return Ptr{ecs_metric_t}(x + 7200)
+    f === :send_error_count && return Ptr{ecs_metric_t}(x + 8400)
+    f === :busy_count && return Ptr{ecs_metric_t}(x + 9600)
+    return getfield(x, f)
+end
+
+function Base.getproperty(x::var"##Ctag#327", f::Symbol)
+    r = Ref{var"##Ctag#327"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"##Ctag#327"}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
+end
+
+function Base.setproperty!(x::Ptr{var"##Ctag#327"}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
+end
+
 
 struct ecs_world_stats_t
     data::NTuple{73224, UInt8}
@@ -3161,15 +3384,15 @@ end
 
 function Base.getproperty(x::Ptr{ecs_world_stats_t}, f::Symbol)
     f === :first_ && return Ptr{Int64}(x + 0)
-    f === :entities && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:65:5)"}(x + 8)
-    f === :components && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:71:5)"}(x + 2408)
-    f === :tables && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:81:5)"}(x + 9608)
-    f === :queries && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:89:5)"}(x + 14408)
-    f === :commands && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:96:5)"}(x + 18008)
-    f === :frame && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:111:5)"}(x + 31208)
-    f === :performance && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:122:5)"}(x + 39608)
-    f === :memory && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:134:5)"}(x + 50408)
-    f === :http && return Ptr{var"struct (unnamed at /home/kyjor/.julia/artifacts/9985b744b7437a276cf9c5af999ad9f1928db99a/include/flecs/private/../addons/stats.h:151:5)"}(x + 62408)
+    f === :entities && return Ptr{var"##Ctag#319"}(x + 8)
+    f === :components && return Ptr{var"##Ctag#320"}(x + 2408)
+    f === :tables && return Ptr{var"##Ctag#321"}(x + 9608)
+    f === :queries && return Ptr{var"##Ctag#322"}(x + 14408)
+    f === :commands && return Ptr{var"##Ctag#323"}(x + 18008)
+    f === :frame && return Ptr{var"##Ctag#324"}(x + 31208)
+    f === :performance && return Ptr{var"##Ctag#325"}(x + 39608)
+    f === :memory && return Ptr{var"##Ctag#326"}(x + 50408)
+    f === :http && return Ptr{var"##Ctag#327"}(x + 62408)
     f === :last_ && return Ptr{Int64}(x + 73208)
     f === :t && return Ptr{Int32}(x + 73216)
     return getfield(x, f)
